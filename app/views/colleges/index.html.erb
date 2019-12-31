@@ -1,0 +1,53 @@
+
+<html>
+<head>
+	<body bgcolor="lavender">
+		<style>
+			table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				width: 100%;
+			}
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
+			tr:nth-child(even) {
+				background-color: #dddddd;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<font color="FireBrick"> <h1> List Of Colleges </h1> </font>
+		</center>
+		<table>
+			<tr>
+				<th> College </th>
+				<th> Department </th>
+				<th>Action</th>
+				<th>Check Details</th>
+				<th> New Student</th>
+			</tr>
+			<% @colleges.each do|college| %>
+			<tr>
+				<td> <%= college.name %> </td>
+				<td> <%= college.department %> </td>
+
+				<td> <%= link_to ' Show', college_path(college) %> 
+					<%= link_to ' Edit ', edit_college_path(college) %>
+					<%= link_to 'Delete', college_path(college),
+					method: :delete,
+					data: {confirm: 'Are you sure?'} %></td>
+					<td> <%= link_to 'Student Details', college_students_path(college), :method => "get" %>
+					</td>
+					<td>	<%= link_to "Add Student", new_student_path %> </td>
+				</tr>
+				<% end %>
+			</table>
+			<p> 
+				<%= link_to "New College", new_college_path%> 
+			</p>
+		</body>
+		</html>

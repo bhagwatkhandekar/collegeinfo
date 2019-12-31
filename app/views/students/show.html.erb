@@ -1,0 +1,41 @@
+<body bgcolor="lavender"> </body>
+<p>
+	<strong> Student name: </strong>
+	<%= @student.firstname %>
+</p>
+
+<p>
+	<strong> Student Address: </strong>
+	<%= @student.address %>
+</p>
+
+<p>
+	<strong> Student age: </strong>
+	<%= @student.age %>
+</p>
+
+<p>
+	<strong> Student gender: </strong>
+	<%= @student.gender %>
+</p>
+
+<p>
+	<strong> College Name: </strong>
+	<%= @student.college.name %>
+</p>
+
+<p>
+	<strong> Last Name: </strong>
+	<%= @student.lastname %>
+</p>
+
+<p>
+	<strong> Email_id: </strong>
+	<%= @student.email %>
+</p>
+
+
+<%= link_to 'EDIT' , edit_student_path %> &nbsp; 
+<%= link_to 'BACK' , students_path %>
+
+

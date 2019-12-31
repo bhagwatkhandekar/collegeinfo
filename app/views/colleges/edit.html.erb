@@ -1,0 +1,30 @@
+  <%= form_with(model: @college, local: true) do |form| %>
+  <body bgcolor="lavender"></body>
+  <% if @college.errors.any? %>
+  <div id="error_explanation">
+    <h2><i>
+      <%= pluralize(@college.errors.count, "error") %> Please make sure that
+      college name should be minimum 7 <b>letters</b></i>
+    </h2>
+      <!-- <ul>
+        <% @college.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul> -->
+    </div>
+    <% end %>
+    <p>
+      <%= form.label :name %>  &emsp; &emsp; &emsp;
+      <%= form.text_field :name %>
+    </p> 
+    <p>
+      <%= form.label :department %> &emsp; 
+      <%= form.text_field :department %>
+    </p>
+    <p>
+      <%= form.label :submit_here%>  
+      &emsp;   <%= form.submit %>
+    </p>
+    <% end %>
+    <%= link_to 'BACK', colleges_path %>
+

@@ -1,0 +1,16 @@
+<body bgcolor="lavender"></body>
+<p>
+	<strong>Name: </strong> &emsp; &emsp; &emsp; 
+	<%= @college.name %>
+</p>
+
+<p>
+	<strong>Department:</strong>&emsp; 
+	<%= @college.department %>
+</p>
+
+<body bgcolor="coral">
+	<%= link_to 'EDIT' , edit_college_path(@college) %> &nbsp; &nbsp; 
+
+	<%= link_to 'BACK' , colleges_path %>
+</body>
